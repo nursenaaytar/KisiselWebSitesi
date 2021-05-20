@@ -1,0 +1,147 @@
+body{
+  background-color: rgb(14, 14, 46);
+  margin:0;
+  height:100%;
+}
+
+h1{
+  background-color: rgb(33, 104, 65);
+  color:lightgray;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+h2{
+  color:rgb(45, 114, 27);
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3{
+  color:rgb(116, 27, 189);
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h4{
+  color:rgb(153, 23, 120);
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+  color:rgb(255, 255, 255);
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  text-indent: 1cm;
+}
+
+li{
+  color:rgb(255, 255, 255);
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+article{
+  color:rgb(255, 255, 255);
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+}
+
+div#iletisim{
+  width: 1346px;
+  height: 925px;
+  margin: auto;
+  border:50px solid transparent;
+  border-radius: 25px;
+  border-image: url(images/cicek.jpg);
+  border-image-slice: 300;
+  border-image-repeat: repeat;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+table#sehir{
+  color:rgb(255, 255, 255);
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  height: 70px;
+}
+
+table#egitim{
+  color:rgb(255, 255, 255);
+}
+
+table#kurTablosu{
+  color: rgb(222, 230, 228);
+}
+
+a{
+  color:rgba(90, 224, 241, 0.781);
+}
+
+table.kurName{
+  color: rgb(222, 230, 228);
+}
+
+iframe.video{
+  width: 100%;
+  height: 50%;
+  border: 1px #cccccc solid;
+}
+
+div#login{
+  color: white;
+}
+
+div#iletisimYanit{
+  color: white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  padding:15px;
+  background-color: #1b1717;
+}
+
+figure{
+  border: 1px #cccccc solid;
+  padding: 4px;
+  margin: auto;
+}
+
+img{
+  width: 50%;
+  height: 25%;
+}
+
+div.resimTanitim {
+  padding: 40px;
+  text-align: center;
+}
+
+div.resim {
+  margin: 20px;
+  float: left;
+  width: 180px;
+}
+
+div.resim img {
+  width: 100%;
+  height: auto;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
