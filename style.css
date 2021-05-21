@@ -1,11 +1,11 @@
 body{
-  background-color: rgb(14, 14, 46);
+  background-color: rgba(158, 158, 228, 0.288);
   margin:0;
   height:100%;
 }
 
 h1{
-  background-color: rgb(33, 104, 65);
+  background-color: rgb(192, 16, 16);
   color:lightgray;
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
@@ -16,12 +16,14 @@ h2{
   color:rgb(45, 114, 27);
   font-size: 35px;
   font-family: Arial, Helvetica, sans-serif;
+  text-indent: 1cm;
 }
 
 h3{
   color:rgb(116, 27, 189);
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
+  text-indent: 1cm;
 }
 
 h4{
@@ -31,7 +33,7 @@ h4{
 }
 
 p{
-  color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
@@ -39,13 +41,13 @@ p{
 }
 
 li{
-  color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 article{
-  color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
@@ -57,24 +59,26 @@ div#iletisim{
   margin: auto;
   border:50px solid transparent;
   border-radius: 25px;
-  border-image: url(images/cicek.jpg);
+  border-image: url(cicek.jpg);
   border-image-slice: 300;
   border-image-repeat: repeat;
-  color: rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   text-align: center;
 }
 
 table#sehir{
-  color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   width: 100%;
   border-collapse: collapse;
 }
+
 th {
   height: 70px;
 }
 
 table#egitim{
-  color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
+  border: black;
 }
 
 table#kurTablosu{
@@ -82,7 +86,7 @@ table#kurTablosu{
 }
 
 a{
-  color:rgba(90, 224, 241, 0.781);
+  color:rgba(255, 0, 0, 0.781);
 }
 
 table.kurName{
@@ -96,11 +100,11 @@ iframe.video{
 }
 
 div#login{
-  color: white;
+  color:rgb(0, 0, 0);
 }
 
 div#iletisimYanit{
-  color: white;
+  color:rgb(0, 0, 0);
 }
 
 footer {
@@ -110,7 +114,7 @@ footer {
   width: 100%;
   height: 40px;
   padding:15px;
-  background-color: #1b1717;
+  background-color: rgb(255, 255, 255);
 }
 
 figure{
@@ -119,9 +123,10 @@ figure{
   margin: auto;
 }
 
-img{
-  width: 50%;
-  height: 25%;
+figcaption {
+  color:rgb(0, 0, 0);
+  padding: 3px;
+  text-align: center;
 }
 
 div.resimTanitim {
@@ -144,4 +149,10 @@ div.resim img {
   padding: 0 6px;
   float: left;
   width: 24.99999%;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
