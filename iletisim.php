@@ -17,7 +17,7 @@
     </style>        
   </head>
   <body>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
           <a href="#" class="navbar-brand"><img src="logo.png" style="width: 30px;">B191210075</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#secenek" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
               <li class="nav-item"><a class="nav-link active" href="index.html" class="nav link ml-15 text-white">HAKKINDA</a></li>
               <li class="nav-item"><a class="nav-link active" href="ozgecmis.html" class="nav link ml-15 text-white">ÖZGEÇMİŞ</a></li>
               <li class="nav-item dropdown">
-                <a href="sehrim.html" class="nav-link dropdown-toggle ml-4 text-white" data-toggle="dropdown">ŞEHRİM</a>
+                <a href="sehrim.html" class="nav-link dropdown-toggle ml-4 text-black" data-toggle="dropdown">ŞEHRİM</a>
                 <div class="dropdown-menu">
                   <a href="sehrim.html" class="dropdown-item">Bartın</a>
                   <a href="amasraMuzesi.html" class="dropdown-item">Amasra Müzesi </a>
@@ -48,12 +48,17 @@
 
       </nav>
 
-
       <br><br><br>
 
-
-      <div class="container" id="iletisimYanit">
-        <?php
+      <div class="container-fluid" style="background-color: white;" id="iletisimYanit">
+        <div class="row">
+          <div class="col-sm-3" style="padding: 30px 50px 50px 70px;">
+            <img src="logo2.jpg" alt="sau" height="10%" style="padding: 10px 10px 10px 40px;">
+            <h3>B191210075</h3>
+            <h4>Nur Sena Aytar</h4>
+          </div>
+          <div class="col-sm-8">
+          <?php
         $ad=$_POST["adi"];
         $soyad=$_POST["soyadi"];
         $eposta = $_POST['email'];
@@ -63,6 +68,8 @@
         $ayy = $_POST['ay'];
         $yill = $_POST['yil'];
         $sehirr = $_POST['sehir'];
+        $dosya=$_POST['dosya'];
+
 
         echo "<table class='table table-striped' name='iletisimName' id='iletisimTablosu' border='1'>";
 
@@ -108,6 +115,12 @@
         echo "</tr>";
 
         echo "<tr>";
+        echo "<td><b>Dosya</b></td>";
+        if(isset($_POST["dosya"]))
+        if($_POST["dosya"]=="") echo "<td>Dosya bulunamadı</td>";
+        else echo "<td>$dosya</td>";
+
+        echo "<tr>";
         echo "<td><b>Açıklama </b> </td>";
         echo "<td>$mesaj</td>";
         echo "</tr>";
@@ -116,17 +129,19 @@
 
         echo "</table>";
 
-        echo '<center><h5>Mesajınız Gönderildi! Teşekkürler.</h5></center>';
 
+        echo '<center><h5>Mesajınız Gönderildi! Teşekkürler.</h5></center>';
+        echo '<center><h5>Yeni bir iletişim formu doldurmak için <a href="iletisim.html" target="_blank">tıklayınız</a>.</h5></center>';
 
       ?>
-
+        </div>
+        <div class="col-sm-1">
+        </div>
+              <br><br><br>
+              <footer>
+                <p>Copyright © 2021 Nur Sena Aytar</p>
+              </footer>
       </div>
-
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 

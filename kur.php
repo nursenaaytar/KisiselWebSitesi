@@ -21,19 +21,17 @@
       th, td {
         text-align: center;
         padding: 8px;
-        color: white;
+        color: black;
       }
-
       tr:nth-child(even){background-color: rgb(166, 202, 35) }
-
       th {
         background-color: #4CAF50;
-        color: white;
+        color: orange;
       }
     </style>
   </head>
   <body>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
           <a href="#" class="navbar-brand"><img src="logo.png" style="width: 30px;">B191210075</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#secenek" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +43,7 @@
                 <li class="nav-item"><a class="nav-link active" href="index.html" class="nav link ml-15 text-white">HAKKINDA</a></li>
                 <li class="nav-item"><a class="nav-link active" href="ozgecmis.html" class="nav link ml-15 text-white">ÖZGEÇMİŞ</a></li>
                 <li class="nav-item dropdown">
-                <a href="sehrim.html" class="nav-link dropdown-toggle ml-4 text-white" data-toggle="dropdown">ŞEHRİM</a>
+                <a href="sehrim.html" class="nav-link dropdown-toggle ml-4 text-black" data-toggle="dropdown">ŞEHRİM</a>
                 <div class="dropdown-menu">
                   <a href="sehrim.html" class="dropdown-item">Bartın</a>
                   <a href="amasraMuzesi.html" class="dropdown-item">Amasra Müzesi </a>
@@ -64,197 +62,210 @@
         </div>
       </nav>
 
+
+
+
       <br><br><br>
 
-      <div class="container">
-      <?php 
+      <div class="container-fluid" style="background-color: white;">
+        <div class="row">
+          <div class="col-sm-3" style="padding: 30px 50px 50px 70px;">
+            <img src="logo2.jpg" alt="sau" height="10%" style="padding: 10px 10px 10px 40px;">
+            <h3>B191210075</h3>
+            <h4>Nur Sena Aytar</h4><br>
+            <a href="ilgiAlanlarim.html" class="btn btn-primary" role="button" style="width: 85%;">İlgi Alanlarım</a><br>
+          </div>
+          <div class="col-sm-8">
+          <?php 
 
-        $kurlar=simplexml_load_file("https://www.tcmb.gov.tr/kurlar/today.xml");
+            $kurlar=simplexml_load_file("https://www.tcmb.gov.tr/kurlar/today.xml");
 
-        $dolarForexAlis=$kurlar->Currency[0]->ForexBuying;
-        $dolarForexSatis=$kurlar->Currency[0]->ForexSelling;
-        $dolarEfektifAlis=$kurlar->Currency[0]->BanknoteBuying;
-        $dolarEfektifSatis=$kurlar->Currency[0]->BanknoteSelling;
+            $dolarForexAlis=$kurlar->Currency[0]->ForexBuying;
+            $dolarForexSatis=$kurlar->Currency[0]->ForexSelling;
+            $dolarEfektifAlis=$kurlar->Currency[0]->BanknoteBuying;
+            $dolarEfektifSatis=$kurlar->Currency[0]->BanknoteSelling;
 
-        $avustralyaDolarForexAlis=$kurlar->Currency[1]->ForexBuying;
-        $avustralyaDolarForexSatis=$kurlar->Currency[1]->ForexSelling;
-        $avustralyaDolarEfektifAlis=$kurlar->Currency[1]->BanknoteBuying;
-        $avustralyaDolarEfektifSatis=$kurlar->Currency[1]->BanknoteSelling;
+            $avustralyaDolarForexAlis=$kurlar->Currency[1]->ForexBuying;
+            $avustralyaDolarForexSatis=$kurlar->Currency[1]->ForexSelling;
+            $avustralyaDolarEfektifAlis=$kurlar->Currency[1]->BanknoteBuying;
+            $avustralyaDolarEfektifSatis=$kurlar->Currency[1]->BanknoteSelling;
 
-        $danimarkaKronuForexAlis=$kurlar->Currency[2]->ForexBuying;
-        $danimarkaKronuForexSatis=$kurlar->Currency[2]->ForexSelling;
-        $danimarkaKronuEfektifAlis=$kurlar->Currency[2]->BanknoteBuying;
-        $danimarkaKronuEfektifSatis=$kurlar->Currency[2]->BanknoteSelling;
+            $danimarkaKronuForexAlis=$kurlar->Currency[2]->ForexBuying;
+            $danimarkaKronuForexSatis=$kurlar->Currency[2]->ForexSelling;
+            $danimarkaKronuEfektifAlis=$kurlar->Currency[2]->BanknoteBuying;
+            $danimarkaKronuEfektifSatis=$kurlar->Currency[2]->BanknoteSelling;
 
-        $euroForexAlis=$kurlar->Currency[3]->ForexBuying;
-        $euroForexSatis=$kurlar->Currency[3]->ForexSelling;
-        $euroEfektifAlis=$kurlar->Currency[3]->BanknoteBuying;
-        $euroEfektifSatis=$kurlar->Currency[3]->BanknoteSelling;
+            $euroForexAlis=$kurlar->Currency[3]->ForexBuying;
+            $euroForexSatis=$kurlar->Currency[3]->ForexSelling;
+            $euroEfektifAlis=$kurlar->Currency[3]->BanknoteBuying;
+            $euroEfektifSatis=$kurlar->Currency[3]->BanknoteSelling;
 
-        $ingilizSterliniForexAlis=$kurlar->Currency[4]->ForexBuying;
-        $ingilizSterliniForexSatis=$kurlar->Currency[4]->ForexSelling;
-        $ingilizSterliniEfektifAlis=$kurlar->Currency[4]->BanknoteBuying;
-        $ingilizSterliniEfektifSatis=$kurlar->Currency[4]->BanknoteSelling;
+            $ingilizSterliniForexAlis=$kurlar->Currency[4]->ForexBuying;
+            $ingilizSterliniForexSatis=$kurlar->Currency[4]->ForexSelling;
+            $ingilizSterliniEfektifAlis=$kurlar->Currency[4]->BanknoteBuying;
+            $ingilizSterliniEfektifSatis=$kurlar->Currency[4]->BanknoteSelling;
 
-        $rusRublesiForexAlis=$kurlar->Currency[14]->ForexBuying;
-        $rusRublesiForexSatis=$kurlar->Currency[14]->ForexSelling;
-        $rusRublesiEfektifAlis=$kurlar->Currency[14]->BanknoteBuying;
-        $rusRublesiEfektifSatis=$kurlar->Currency[14]->BanknoteSelling;
+            $rusRublesiForexAlis=$kurlar->Currency[14]->ForexBuying;
+            $rusRublesiForexSatis=$kurlar->Currency[14]->ForexSelling;
+            $rusRublesiEfektifAlis=$kurlar->Currency[14]->BanknoteBuying;
+            $rusRublesiEfektifSatis=$kurlar->Currency[14]->BanknoteSelling;
 
-        $iranRiyaliForexAlis=$kurlar->Currency[15]->ForexBuying;
-        $iranRiyaliForexSatis=$kurlar->Currency[15]->ForexSelling;
-        $iranRiyaliEfektifAlis=$kurlar->Currency[15]->BanknoteBuying;
-        $iranRiyaliEfektifSatis=$kurlar->Currency[15]->BanknoteSelling;
+            $iranRiyaliForexAlis=$kurlar->Currency[15]->ForexBuying;
+            $iranRiyaliForexSatis=$kurlar->Currency[15]->ForexSelling;
+            $iranRiyaliEfektifAlis=$kurlar->Currency[15]->BanknoteBuying;
+            $iranRiyaliEfektifSatis=$kurlar->Currency[15]->BanknoteSelling;
 
-        $suudiArabistanRiyaliForexAlis=$kurlar->Currency[10]->ForexBuying;
-        $suudiArabistanRiyaliForexSatis=$kurlar->Currency[10]->ForexSelling;
-        $suudiArabistanRiyaliEfektifAlis=$kurlar->Currency[10]->BanknoteBuying;
-        $suudiArabistanRiyaliEfektifSatis=$kurlar->Currency[10]->BanknoteSelling;
+            $suudiArabistanRiyaliForexAlis=$kurlar->Currency[10]->ForexBuying;
+            $suudiArabistanRiyaliForexSatis=$kurlar->Currency[10]->ForexSelling;
+            $suudiArabistanRiyaliEfektifAlis=$kurlar->Currency[10]->BanknoteBuying;
+            $suudiArabistanRiyaliEfektifSatis=$kurlar->Currency[10]->BanknoteSelling;
 
-        $japonYeniForexAlis=$kurlar->Currency[11]->ForexBuying;
-        $japonYeniForexSatis=$kurlar->Currency[11]->ForexSelling;
-        $japonYeniEfektifAlis=$kurlar->Currency[11]->BanknoteBuying;
-        $japonYeniEfektifSatis=$kurlar->Currency[11]->BanknoteSelling;
+            $japonYeniForexAlis=$kurlar->Currency[11]->ForexBuying;
+            $japonYeniForexSatis=$kurlar->Currency[11]->ForexSelling;
+            $japonYeniEfektifAlis=$kurlar->Currency[11]->BanknoteBuying;
+            $japonYeniEfektifSatis=$kurlar->Currency[11]->BanknoteSelling;
 
-        $dolarForexAlis=str_replace(".", ",", $dolarForexAlis);
-        $dolarForexSatis=str_replace(".", ",", $dolarForexSatis);
-        $dolarEfektifAlis=str_replace(".", ",", $dolarEfektifAlis);
-        $dolarEfektifSatis=str_replace(".", ",", $dolarEfektifSatis);
+            $dolarForexAlis=str_replace(".", ",", $dolarForexAlis);
+            $dolarForexSatis=str_replace(".", ",", $dolarForexSatis);
+            $dolarEfektifAlis=str_replace(".", ",", $dolarEfektifAlis);
+            $dolarEfektifSatis=str_replace(".", ",", $dolarEfektifSatis);
 
-        $avustralyaDolarForexAlis=str_replace(".", ",", $avustralyaDolarForexAlis);
-        $avustralyaDolarForexSatis=str_replace(".", ",", $avustralyaDolarForexSatis);
-        $avustralyaDolarEfektifAlis=str_replace(".", ",", $avustralyaDolarEfektifAlis);
-        $avustralyaDolarEfektifSatis=str_replace(".", ",", $avustralyaDolarEfektifSatis);
+            $avustralyaDolarForexAlis=str_replace(".", ",", $avustralyaDolarForexAlis);
+            $avustralyaDolarForexSatis=str_replace(".", ",", $avustralyaDolarForexSatis);
+            $avustralyaDolarEfektifAlis=str_replace(".", ",", $avustralyaDolarEfektifAlis);
+            $avustralyaDolarEfektifSatis=str_replace(".", ",", $avustralyaDolarEfektifSatis);
 
-        $danimarkaKronuForexAlis=str_replace(".", ",", $danimarkaKronuForexAlis);
-        $danimarkaKronuForexSatis=str_replace(".", ",", $danimarkaKronuForexSatis);
-        $danimarkaKronuEfektifAlis=str_replace(".", ",", $danimarkaKronuEfektifAlis);
-        $danimarkaKronuEfektifSatis=str_replace(".", ",", $danimarkaKronuEfektifSatis);
+            $danimarkaKronuForexAlis=str_replace(".", ",", $danimarkaKronuForexAlis);
+            $danimarkaKronuForexSatis=str_replace(".", ",", $danimarkaKronuForexSatis);
+            $danimarkaKronuEfektifAlis=str_replace(".", ",", $danimarkaKronuEfektifAlis);
+            $danimarkaKronuEfektifSatis=str_replace(".", ",", $danimarkaKronuEfektifSatis);
 
-        $euroForexAlis=str_replace(".", ",", $euroForexAlis);
-        $euroForexSatis=str_replace(".", ",", $euroForexSatis);
-        $euroEfektifAlis=str_replace(".", ",", $euroEfektifAlis);
-        $euroEfektifSatis=str_replace(".", ",", $euroEfektifSatis);
+            $euroForexAlis=str_replace(".", ",", $euroForexAlis);
+            $euroForexSatis=str_replace(".", ",", $euroForexSatis);
+            $euroEfektifAlis=str_replace(".", ",", $euroEfektifAlis);
+            $euroEfektifSatis=str_replace(".", ",", $euroEfektifSatis);
 
-        $ingilizSterliniForexAlis=str_replace(".", ",", $ingilizSterliniForexAlis);
-        $ingilizSterliniForexSatis=str_replace(".", ",", $ingilizSterliniForexSatis);
-        $ingilizSterliniEfektifAlis=str_replace(".", ",", $ingilizSterliniEfektifAlis);
-        $ingilizSterliniEfektifSatis=str_replace(".", ",", $ingilizSterliniEfektifSatis);
+            $ingilizSterliniForexAlis=str_replace(".", ",", $ingilizSterliniForexAlis);
+            $ingilizSterliniForexSatis=str_replace(".", ",", $ingilizSterliniForexSatis);
+            $ingilizSterliniEfektifAlis=str_replace(".", ",", $ingilizSterliniEfektifAlis);
+            $ingilizSterliniEfektifSatis=str_replace(".", ",", $ingilizSterliniEfektifSatis);
 
-        $rusRublesiForexAlis=str_replace(".", ",", $rusRublesiForexAlis);
-        $rusRublesiForexSatis=str_replace(".", ",", $rusRublesiForexSatis);
-        $rusRublesiEfektifAlis=str_replace(".", ",", $rusRublesiEfektifAlis);
-        $rusRublesiEfektifSatis=str_replace(".", ",", $rusRublesiEfektifSatis);
+            $rusRublesiForexAlis=str_replace(".", ",", $rusRublesiForexAlis);
+            $rusRublesiForexSatis=str_replace(".", ",", $rusRublesiForexSatis);
+            $rusRublesiEfektifAlis=str_replace(".", ",", $rusRublesiEfektifAlis);
+            $rusRublesiEfektifSatis=str_replace(".", ",", $rusRublesiEfektifSatis);
 
-        $iranRiyaliForexAlis=str_replace(".", ",", $iranRiyaliForexAlis);
-        $iranRiyaliForexSatis=str_replace(".", ",", $iranRiyaliForexSatis);
-        $iranRiyaliEfektifAlis=str_replace(".", ",", $iranRiyaliEfektifAlis);
-        $iranRiyaliEfektifSatis=str_replace(".", ",", $iranRiyaliEfektifSatis);
+            $iranRiyaliForexAlis=str_replace(".", ",", $iranRiyaliForexAlis);
+            $iranRiyaliForexSatis=str_replace(".", ",", $iranRiyaliForexSatis);
+            $iranRiyaliEfektifAlis=str_replace(".", ",", $iranRiyaliEfektifAlis);
+            $iranRiyaliEfektifSatis=str_replace(".", ",", $iranRiyaliEfektifSatis);
 
-        $suudiArabistanRiyaliForexAlis=str_replace(".", ",", $suudiArabistanRiyaliForexAlis);
-        $suudiArabistanRiyaliForexSatis=str_replace(".", ",", $suudiArabistanRiyaliForexSatis);
-        $suudiArabistanRiyaliEfektifAlis=str_replace(".", ",", $suudiArabistanRiyaliEfektifAlis);
-        $suudiArabistanRiyaliEfektifSatis=str_replace(".", ",", $suudiArabistanRiyaliEfektifSatis);
+            $suudiArabistanRiyaliForexAlis=str_replace(".", ",", $suudiArabistanRiyaliForexAlis);
+            $suudiArabistanRiyaliForexSatis=str_replace(".", ",", $suudiArabistanRiyaliForexSatis);
+            $suudiArabistanRiyaliEfektifAlis=str_replace(".", ",", $suudiArabistanRiyaliEfektifAlis);
+            $suudiArabistanRiyaliEfektifSatis=str_replace(".", ",", $suudiArabistanRiyaliEfektifSatis);
 
-        $japonYeniForexAlis=str_replace(".", ",", $japonYeniForexAlis);
-        $japonYeniForexSatis=str_replace(".", ",", $japonYeniForexSatis);
-        $japonYeniEfektifAlis=str_replace(".", ",", $japonYeniEfektifAlis);
-        $japonYeniEfektifSatis=str_replace(".", ",", $japonYeniEfektifSatis);
+            $japonYeniForexAlis=str_replace(".", ",", $japonYeniForexAlis);
+            $japonYeniForexSatis=str_replace(".", ",", $japonYeniForexSatis);
+            $japonYeniEfektifAlis=str_replace(".", ",", $japonYeniEfektifAlis);
+            $japonYeniEfektifSatis=str_replace(".", ",", $japonYeniEfektifSatis);
 
-        echo "<h1>Güncel Piyasa Bilgileri</h1>";
+            echo "<h1>Güncel Piyasa Bilgileri</h1>";
 
-        echo "<table class='table table-striped' name='kurName' id='kurTablosu' border='1'>";
+            echo "<table class='table table-striped' name='kurName' id='kurTablosu' border='1' style='width: 100%; color: rgb(0, 0, 0); background: rgb(248, 246, 248); border-radius: 10px; padding: 2px 70px 20px 2px;'>";
 
-        echo "<tr>";
-        echo "<th>Döviz Cinsi</th>";
-        echo "<th>Döviz Alış</th>";
-        echo "<th>Döviz Satış</th>";
-        echo "<th>Efektif Alış</th>";
-        echo "<th>Efektif Satış</th>";
-        echo "</tr>";
+            echo "<tr class='success'>";
+            echo "<th>Döviz Cinsi</th>";
+            echo "<th>Döviz Alış</th>";
+            echo "<th>Döviz Satış</th>";
+            echo "<th>Efektif Alış</th>";
+            echo "<th>Efektif Satış</th>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>Dolar</td>";
-        echo "<td>$dolarForexAlis</td>";
-        echo "<td>$dolarForexSatis</td>";
-        echo "<td>$dolarEfektifAlis</td>";
-        echo "<td>$dolarEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr class='danger'>";
+            echo "<td>Dolar</td>";
+            echo "<td>$dolarForexAlis</td>";
+            echo "<td>$dolarForexSatis</td>";
+            echo "<td>$dolarEfektifAlis</td>";
+            echo "<td>$dolarEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>Avustralya Doları</td>";
-        echo "<td>$avustralyaDolarForexAlis</td>";
-        echo "<td>$avustralyaDolarForexSatis</td>";
-        echo "<td>$avustralyaDolarEfektifAlis</td>";
-        echo "<td>$avustralyaDolarEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>Avustralya Doları</td>";
+            echo "<td>$avustralyaDolarForexAlis</td>";
+            echo "<td>$avustralyaDolarForexSatis</td>";
+            echo "<td>$avustralyaDolarEfektifAlis</td>";
+            echo "<td>$avustralyaDolarEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>Danimarka Kronu</td>";
-        echo "<td>$danimarkaKronuForexAlis</td>";
-        echo "<td>$danimarkaKronuForexSatis</td>";
-        echo "<td>$danimarkaKronuEfektifAlis</td>";
-        echo "<td>$danimarkaKronuEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>Danimarka Kronu</td>";
+            echo "<td>$danimarkaKronuForexAlis</td>";
+            echo "<td>$danimarkaKronuForexSatis</td>";
+            echo "<td>$danimarkaKronuEfektifAlis</td>";
+            echo "<td>$danimarkaKronuEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>Euro</td>";
-        echo "<td>$euroForexAlis</td>";
-        echo "<td>$euroForexSatis</td>";
-        echo "<td>$euroEfektifAlis</td>";
-        echo "<td>$euroEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>Euro</td>";
+            echo "<td>$euroForexAlis</td>";
+            echo "<td>$euroForexSatis</td>";
+            echo "<td>$euroEfektifAlis</td>";
+            echo "<td>$euroEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>İngiliz Sterlini</td>";
-        echo "<td>$ingilizSterliniForexAlis</td>";
-        echo "<td>$ingilizSterliniForexSatis</td>";
-        echo "<td>$ingilizSterliniEfektifAlis</td>";
-        echo "<td>$ingilizSterliniEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>İngiliz Sterlini</td>";
+            echo "<td>$ingilizSterliniForexAlis</td>";
+            echo "<td>$ingilizSterliniForexSatis</td>";
+            echo "<td>$ingilizSterliniEfektifAlis</td>";
+            echo "<td>$ingilizSterliniEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>Suudi Arabistan Riyali</td>";
-        echo "<td>$suudiArabistanRiyaliForexAlis</td>";
-        echo "<td>$suudiArabistanRiyaliForexSatis</td>";
-        echo "<td>$suudiArabistanRiyaliEfektifAlis</td>";
-        echo "<td>$suudiArabistanRiyaliEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>Suudi Arabistan Riyali</td>";
+            echo "<td>$suudiArabistanRiyaliForexAlis</td>";
+            echo "<td>$suudiArabistanRiyaliForexSatis</td>";
+            echo "<td>$suudiArabistanRiyaliEfektifAlis</td>";
+            echo "<td>$suudiArabistanRiyaliEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>Japon Yeni</td>";
-        echo "<td>$japonYeniForexAlis</td>";
-        echo "<td>$japonYeniForexSatis</td>";
-        echo "<td>$japonYeniEfektifAlis</td>";
-        echo "<td>$japonYeniEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>Japon Yeni</td>";
+            echo "<td>$japonYeniForexAlis</td>";
+            echo "<td>$japonYeniForexSatis</td>";
+            echo "<td>$japonYeniEfektifAlis</td>";
+            echo "<td>$japonYeniEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>Rus Rublesi</td>";
-        echo "<td>$rusRublesiForexAlis</td>";
-        echo "<td>$rusRublesiForexSatis</td>";
-        echo "<td>$rusRublesiEfektifAlis</td>";
-        echo "<td>$rusRublesiEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>Rus Rublesi</td>";
+            echo "<td>$rusRublesiForexAlis</td>";
+            echo "<td>$rusRublesiForexSatis</td>";
+            echo "<td>$rusRublesiEfektifAlis</td>";
+            echo "<td>$rusRublesiEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "<tr>";
-        echo "<td>İran Riyali</td>";
-        echo "<td>$iranRiyaliForexAlis</td>";
-        echo "<td>$iranRiyaliForexSatis</td>";
-        echo "<td>$iranRiyaliEfektifAlis</td>";
-        echo "<td>$iranRiyaliEfektifSatis</td>";
-        echo "</tr>";
+            echo "<tr>";
+            echo "<td>İran Riyali</td>";
+            echo "<td>$iranRiyaliForexAlis</td>";
+            echo "<td>$iranRiyaliForexSatis</td>";
+            echo "<td>$iranRiyaliEfektifAlis</td>";
+            echo "<td>$iranRiyaliEfektifSatis</td>";
+            echo "</tr>";
 
-        echo "</table>";
+            echo "</table>";
 
-        ?>
+            ?>
+            </div>
+            <div class="col-sm-1">
+            </div>
+                  <br><br><br>
+                  <footer>
+                    <p>Copyright © 2021 Nur Sena Aytar</p>
+                  </footer>
+      </div>
 
-        <br><br><br><br><br><br>
-          <footer>
-          <p>Copyright © 2021 Nur Sena Aytar</p>
-          </footer>
-
-       </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
